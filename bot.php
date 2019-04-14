@@ -4,8 +4,8 @@ require_once('heyLucy.php');
 
 class bot extends heyLucy
 {
-	var $bot_token = '868234778:AAHQ0BKE8NaeYR11U19CUkFG8CYFkAGtna4';
-	var $webhook_url = 'https://sparkik.com/cryptolucy/webhook.php';
+	var $bot_token = '';
+	var $webhook_url = '';
 	var $commands = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $commandsGroup = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $replycommands = array();
