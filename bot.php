@@ -4,8 +4,8 @@ require_once('heyLucy.php');
 
 class bot extends heyLucy
 {
-	var $bot_token = '';
-	var $webhook_url = '';
+	var $bot_token = 'your_token_here';
+	var $webhook_url = 'link_to_webhook_file';
 	var $commands = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $commandsGroup = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $replycommands = array();
