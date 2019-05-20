@@ -254,7 +254,21 @@ class heyLucy
 
 
 	}
+	function send_direct($chatid, $message){
 
+		$api_url = 'https://api.telegram.org/bot'.$this->$bot_token.'/';
+
+		$parameters =  array('chat_id' =>   $chatid , "text" => $message, "parse_mode" => "HTML");
+
+		foreach ($parameters as $key => &$val) {
+			// encoding to JSON array parameters, for example reply_markup
+			if (!is_numeric($val) && !is_string($val)) {
+			  $val = json_encode($val);
+			}
+		}
+		$url = $api_url.'sendmessage?'.http_build_query($parameters);
+		file_get_contents($url);
+	}
 	function post_async($url, $params){
 		foreach ($params as $key => &$val) {
 		  if (is_array($val)) $val = implode(',', $val);

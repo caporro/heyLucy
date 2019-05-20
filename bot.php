@@ -1,12 +1,11 @@
 <?php
 
 require_once('heyLucy.php');
-require_once('key.php');
+
 
 class bot extends heyLucy
 {
-	var $bot_token = keys::$bot_token;
-	var $webhook_url = keys::$webhook_url;
+	var $bot_token = null;
 	var $commands = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $commandsGroup = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $replycommands = array();
@@ -18,6 +17,11 @@ class bot extends heyLucy
 	var $usedb = FALSE;
 
 	//$testBot->initDB($db);
+
+	function __construct($bot_token) {
+        $this->bot_token = $bot_token;
+    }
+
 
 	function start(){
 

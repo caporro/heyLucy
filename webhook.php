@@ -4,6 +4,7 @@
     error_reporting(E_ALL);
 
     require_once('bot.php');
+    require_once('keys.php');
 	//catch input data
 	$content = file_get_contents("php://input");
     $update = json_decode($content, true);
@@ -12,7 +13,7 @@
 		exit;
 	}
 
-	$bot = new bot();
+	$bot = new bot($bot_token);
 
 	$bot->input($update);
 	$bot->run();
