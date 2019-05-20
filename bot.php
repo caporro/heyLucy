@@ -5,7 +5,7 @@ require_once('heyLucy.php');
 
 class bot extends heyLucy
 {
-	var $bot_token = null;
+	var $bot_token;
 	var $commands = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $commandsGroup = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $replycommands = array();
@@ -68,7 +68,7 @@ class bot extends heyLucy
 
 	function send_direct($chatid, $message){
 
-		$api_url = 'https://api.telegram.org/bot'.$this->$bot_token.'/';
+		$api_url = 'https://api.telegram.org/bot'.$this->bot_token.'/';
 
 		$parameters =  array('chat_id' =>   $chatid , "text" => $message, "parse_mode" => "HTML");
 

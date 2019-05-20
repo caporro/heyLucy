@@ -24,6 +24,7 @@ class heyLucy
 	var $conn_id;
 	var $fromchat;
 	var $at = FALSE;
+	var $bot_token;
 
 
 
