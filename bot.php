@@ -6,6 +6,7 @@ require_once('heyLucy.php');
 class bot extends heyLucy
 {
 	var $bot_token;
+	var $api_url = 'https://api.telegram.org/bot'.$this->bot_token.'/';
 	var $commands = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $commandsGroup = array('chatid', 'help', 'start', 'nuser', 'stat', 'test');
 	var $replycommands = array();

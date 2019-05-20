@@ -257,8 +257,6 @@ class heyLucy
 	}
 	function send_direct($chatid, $message){
 
-		$api_url = 'https://api.telegram.org/bot'.$this->$bot_token.'/';
-
 		$parameters =  array('chat_id' =>   $chatid , "text" => $message, "parse_mode" => "HTML");
 
 		foreach ($parameters as $key => &$val) {
@@ -267,7 +265,7 @@ class heyLucy
 			  $val = json_encode($val);
 			}
 		}
-		$url = $api_url.'sendmessage?'.http_build_query($parameters);
+		$url = $this->api_url.'sendmessage?'.http_build_query($parameters);
 		file_get_contents($url);
 	}
 	function post_async($url, $params){
