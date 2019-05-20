@@ -62,6 +62,27 @@ il bot è funzionante! scrivigli un messaggio
 ## Usage
 
 
+## Utility
+#### Git Alert (git_alert.php)
+Puoi settare il tuo repository git per notificare i push in questa maniera:
+
+![image](https://user-images.githubusercontent.com/24509741/58053010-a197e100-7b56-11e9-9dc0-a0ecdc55e6e2.png)
+
+l'unico parametro da passare è il chatid dove vuoi che notifica. (puoi saperlo eseguendo /chatid nel tuo bot)
+
+riceverai un messaggio come questo:
+![image](https://user-images.githubusercontent.com/24509741/58053208-23880a00-7b57-11e9-8fe3-6fb9f2463d5c.png)
+
+#### Resend (resend.php)
+
+#### Send (send.php)
+Questo file serve per poter inviare messaggi da shell o in uno script, ad esempio uno script nel crontab.
+
+```shell
+php send.php chatid message
+```
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
