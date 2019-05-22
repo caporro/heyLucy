@@ -1,6 +1,9 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/24509741/57247411-112eac00-7040-11e9-876a-1d65a4973ad5.png"></p>
 <h1 align="center">heyLucy</h1>
 
+![Release](https://img.shields.io/github/release-pre/caporro/heyLucy.svg)
+![License](https://img.shields.io/github/license/caporro/heyLucy.svg)
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 HeyLucy è un semplicissimo ma potentissimo bot telegram in php. Permette di creare un bot in soli 10 minuti.
 
@@ -81,6 +84,17 @@ Questo file serve per poter inviare messaggi da shell o in uno script, ad esempi
 ```shell
 php send.php chatid message
 ```
+
+## Create a bot 
+You need to create a Telegram bot which will be used to send the messages to the users. To create a new Telegram Bot check the official documentation at https://core.telegram.org/bots
+
+
+## Get chatid
+To get the chat id, open https://telegram.me and select the group chat you previously created. Check the URL, it will be something like this::
+
+    https://web.telegram.org/#/im?p=g99999999
+
+You need to not the value of p parameter (g99999999) and exchange **g** with a **-**: **-99999999**
 
 
 ## Contributing
