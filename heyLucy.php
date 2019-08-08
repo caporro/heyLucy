@@ -56,7 +56,7 @@ class heyLucy
 			$this->chatId = $input['message']['chat']['id'];
 			$this->firstname = $input['message']['chat']['first_name'];
 			$this->username = $input['message']['chat']['username'];
-			$this->lastname = $input['message']['chat']['last_name'];
+			//$this->lastname = $input['message']['chat']['last_name'];
 			$this->language_code = $input['message']['from']['language_code'];
 			$this->fromchat = $input['message']['chat']['type'];
 
