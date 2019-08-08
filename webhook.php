@@ -19,7 +19,7 @@
 	$bot->run();
 	$bot->send();
     //
-	// $file = 'debug.txt';
-	// //$debug = ob_get_clean()."\n";
-	// file_put_contents($file, $content, FILE_APPEND );
+	 $file = 'debug.txt';
+	 //$debug = ob_get_clean()."\n";
+	file_put_contents($file, $content, FILE_APPEND );
 ?>
