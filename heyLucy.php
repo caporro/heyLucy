@@ -28,8 +28,9 @@ class heyLucy
 
 
 
-	function __construct(){
-       	//Api key Telegram bot
+	function __construct($bot_token){
+  	//Api key Telegram bot
+		$this->bot_token = $bot_token;
 		$this->api_url = 'https://api.telegram.org/bot'.$this->bot_token.'/';
 		$this->api_url_file = 'https://api.telegram.org/file/bot'.$this->bot_token.'/';
 
