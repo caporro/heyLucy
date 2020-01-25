@@ -1,6 +1,6 @@
 <?php
 /*
-	HeyLucy v1.0.0
+	HeyLucy v0.1.1
 	a simply telegram bot
 */
 class heyLucy
@@ -33,8 +33,12 @@ class heyLucy
 		$this->bot_token = $bot_token;
 		$this->api_url = 'https://api.telegram.org/bot'.$this->bot_token.'/';
 		$this->api_url_file = 'https://api.telegram.org/file/bot'.$this->bot_token.'/';
+    	}
+	function test(){
+		$this->response .= "f";
+		//$this->sendLucy("test", 2);
+	}
 
-    }
 	function initDB($db){
 
 		$db_user=$db['db_user'];
@@ -49,7 +53,7 @@ class heyLucy
 
 	}
 	function input($input){
-        $this->input = $input;
+		$this->input = $input;
 		//$this->sendLucy(json_encode($this->input));
 		//$this->response .= json_encode($this->input);
 		if (isset($input['message'])) {
@@ -73,6 +77,7 @@ class heyLucy
 				//$this->response .= json_encode($this->input);
 
 			$this->textReceived = $input['message']['text'];
+
 			$this->getCommand();
 
 		}
@@ -84,16 +89,19 @@ class heyLucy
 		}
 
 
-    }
+    	}
 	function run(){
 
 		if ($this->inputType=='message'){
-
 			$this->getTypeMsg();
 			if ($this->typeMsg=="newcommand"){
+
+
 				$this->delDialog();
 				if ($this->fromchat == "group" || $this->fromchat == "supergroup") {
+
 					if ($this->at) {
+
 						if (in_array($this->command, $this->commandsGroup)) {
 
 							$funcname = $this->command;
@@ -118,27 +126,28 @@ class heyLucy
 				}
 			}
 			elseif($this->typeMsg=="symplytext"){
+
 				if ($this->fromchat != "group" && $this->fromchat != "supergroup" ) {
 
 
-						//verifica se ci sia un dialogo in corso o semplice testo
-						$query="SELECT * FROM temp WHERE chatid = $this->chatId";
-
-						$result = mysql_query($query, $this->conn_id);
-
-						while ($data= mysql_fetch_assoc($result)) {
-							$attesa_risposta = $data['attesa_risposta'];
-							$comandi = $data['comandi'];
-							$comandi = explode("|", $comandi);
-						}
-						if (in_array($attesa_risposta, $this->textreply)) {
-							$funcname = $attesa_risposta;
-							$this->$funcname($comandi);
-						}
-						else {
-							$this->response .= "unknow!";
-
-						}
+						// //verifica se ci sia un dialogo in corso o semplice testo
+						// $query="SELECT * FROM temp WHERE chatid = $this->chatId";
+						//
+						// $result = mysql_query($query, $this->conn_id);
+						//
+						// while ($data= mysql_fetch_assoc($result)) {
+						// 	$attesa_risposta = $data['attesa_risposta'];
+						// 	$comandi = $data['comandi'];
+						// 	$comandi = explode("|", $comandi);
+						// }
+						// if (in_array($attesa_risposta, $this->textreply)) {
+						// 	$funcname = $attesa_risposta;
+						// 	$this->$funcname($comandi);
+						// }
+						// else {
+						// 	$this->response .= "unknow!";
+						//
+						// }
 				}
 
 			}
@@ -154,7 +163,7 @@ class heyLucy
 					$this->response .= "Error!";
 				}
 		}
-    }
+    	}
 	function getTypeMsg(){
 
        	if ($this->inputType=="message"){
@@ -167,7 +176,7 @@ class heyLucy
 			}
 		}
 
-    }
+    	}
 	function getCommand(){
 
 		if ($this->textReceived[0]=="/"){
@@ -207,6 +216,7 @@ class heyLucy
 			 "parse_mode" => "HTML");
 		$parameters["text"] = $this->response;
 		$parameters["reply_markup"] = $this->reply_markup;
+
 		foreach ($parameters as $key => &$val) {
 				// encoding to JSON array parameters, for example reply_markup
 				if (!is_numeric($val) && !is_string($val)) {
@@ -215,6 +225,7 @@ class heyLucy
 			}
 
 			$url = $this->api_url.'sendmessage?'.http_build_query($parameters);
+
 			file_get_contents($url);
 	}
 	function editmsg(){
@@ -292,6 +303,9 @@ class heyLucy
 		fwrite($fp, $out);
 		while (!feof($fp)) $result .= fread($fp,32000);
 		fclose($fp);
+	}
+	function chatid(){
+		$this->response .= "". $this->chatId." is your chatId";
 	}
 
 }

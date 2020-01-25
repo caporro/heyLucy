@@ -1,4 +1,7 @@
 <?php
 
-    $bot_token = 'your_token_here';
-    $webhook_url = 'link_to_webhook_file';
+    $bot_token = '368702863:AAG8e36YUdJejCihRo45wTw_q0t0DgkmdqQ';
+    $webhook_url = 'https://caporro.it/lucybot/webhook.php';
+
+//CryptoLucy 368702863:AAG8e36YUdJejCihRo45wTw_q0t0DgkmdqQ
+//HeyLucy 368702863:AAG8e36YUdJejCihRo45wTw_q0t0DgkmdqQ

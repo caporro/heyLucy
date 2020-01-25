@@ -19,11 +19,7 @@ class bot extends heyLucy
 
 	//$testBot->initDB($db);
 
-	function __construct($bot_token) {
-        $this->bot_token = $bot_token;
-    }
-
-
+	
 	function start(){
 
 		//$firstname = $update['message']['chat']['first_name'];
@@ -58,15 +54,6 @@ class bot extends heyLucy
 		}
 
 	}
-	function chatid(){
-		$this->response .= "". $this->chatId." is your chatId";
-
-	}
-	function test(){
-		$this->response .= "f";
-		//$this->sendLucy("test", 2);
-	}
-
 	function send_direct($chatid, $message){
 
 

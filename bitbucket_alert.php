@@ -10,8 +10,8 @@
 	$chatid =  $_REQUEST['chatid'] ;
 
 	$message = "✅<b>New push on ".$json['repository']['name']."</b>
-<b>Author:</b> ".$json['push']['changes']['new']['target']['author']['user']['display_name']."
-<b>Message:</b> ".$json['push']['changes']['new']['target']['message'];
+<b>Author:</b> ".$json['push']['changes'][0]['new']['target']['author']['user']['display_name']."
+<b>Message:</b> ".$json['push']['changes'][0]['new']['target']['message'];
 
 
 	$bot = new bot($bot_token);
