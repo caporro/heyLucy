@@ -19,7 +19,7 @@ class bot extends heyLucy
 
 	//$testBot->initDB($db);
 
-	
+
 	function start(){
 
 		//$firstname = $update['message']['chat']['first_name'];
@@ -53,21 +53,6 @@ class bot extends heyLucy
 
 		}
 
-	}
-	function send_direct($chatid, $message){
-
-
-		$url = $this->api_url.$this->bot_token.'/';
-		$parameters =  array('chat_id' =>   $chatid , "text" => $message, "parse_mode" => "HTML");
-
-		foreach ($parameters as $key => &$val) {
-			// encoding to JSON array parameters, for example reply_markup
-			if (!is_numeric($val) && !is_string($val)) {
-			  $val = json_encode($val);
-			}
-		}
-		$url = $url.'sendmessage?'.http_build_query($parameters);
-		file_get_contents($url);
 	}
 
 	function stat(){

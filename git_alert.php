@@ -9,7 +9,7 @@
 	$chatid =  $_REQUEST['chatid'];
 	$githost =  $_REQUEST['githost'];
 
-	if ($githost=='github') {
+	if ($githost == 'github') {
 
 		$message = "✅<b>New push on ".$json['repository']['name']."</b>
 <b>Author:</b> ".$json['head_commit']['author']['name']."
