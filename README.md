@@ -15,8 +15,8 @@ HeyLucy è un semplicissimo ma potentissimo bot telegram in php. Permette di cre
 
 | filename      |  Description    |
 |---------------|-----------------|
-| bot.php       | Qui va tutta la logica del tuo bot insieme a le stringhe di configurazione|
-| heyLucy.php   |	heyLucy core class |
+| bot.php       |   Qui va tutta la logica del tuo bot insieme a le stringhe di configurazione|
+| heyLucy.php   |	  heyLucy core class |
 | register.php  |   register webhook for your bot |
 | webhook.php   |   webhook che viene richiamato dal server telegram all'arrivo di un messaggio |
 
@@ -85,7 +85,7 @@ Questo file serve per poter inviare messaggi da shell o in uno script, ad esempi
 php send.php chatid message
 ```
 
-## Create a bot 
+## Create a bot
 You need to create a Telegram bot which will be used to send the messages to the users. To create a new Telegram Bot check the official documentation at https://core.telegram.org/bots
 
 

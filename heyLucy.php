@@ -1,7 +1,7 @@
 <?php
 /*
-	HeyLucy v0.1.1
-	a simply telegram bot
+	HeyLucy
+	a simply php telegram bot
 */
 class heyLucy
 {
@@ -26,19 +26,12 @@ class heyLucy
 	var $at = FALSE;
 	var $bot_token;
 
-
-
 	function __construct($bot_token){
-  	//Api key Telegram bot
+  		//Api key Telegram bot
 		$this->bot_token = $bot_token;
 		$this->api_url = 'https://api.telegram.org/bot'.$this->bot_token.'/';
 		$this->api_url_file = 'https://api.telegram.org/file/bot'.$this->bot_token.'/';
     	}
-	function test(){
-		$this->response .= "f";
-		//$this->sendLucy("test", 2);
-	}
-
 	function initDB($db){
 
 		$db_user=$db['db_user'];
