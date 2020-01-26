@@ -24,7 +24,6 @@
 
 	}
 
-
 	$bot = new bot($bot_token);
 	$bot->send_direct($chatid, $message);
 
