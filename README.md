@@ -68,6 +68,7 @@ il bot è funzionante! scrivigli un messaggio
 ## Utility
 #### Git Alert (git_alert.php)
 Puoi settare il tuo repository git per notificare i push in questa maniera:
+string:https://caporro.it/cryptolucy/git_alert.php?chatid=123456789&githost=github
 
 ![image](https://user-images.githubusercontent.com/24509741/58053010-a197e100-7b56-11e9-9dc0-a0ecdc55e6e2.png)
 

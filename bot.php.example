@@ -12,13 +12,10 @@ class bot extends heyLucy
 	var $replycommands = array();
 	var $textreply = array();
 	var $db = array (	"db_user"=>"",
-						"db_pass"=>"",
-						"db_host"=>"",
-						"db_name"=>""  );
+				"db_pass"=>"",
+				"db_host"=>"",
+				"db_name"=>""  );
 	var $usedb = FALSE;
-
-	//$testBot->initDB($db);
-
 
 	function start(){
 
@@ -55,41 +52,6 @@ class bot extends heyLucy
 
 	}
 
-	function stat(){
-		$query="SELECT * FROM utenti WHERE chatid = '".$this->chatId."' AND usergroup >0 ";
-		$result = mysql_query($query,$this->conn_id);
-		$num_rows = mysql_num_rows($result);
-		if ($num_rows>0) {
-
-			$query="SELECT * FROM utenti ";
-			$result = mysql_query($query, $this->conn_id);
-			$num_rows = mysql_num_rows($result);
-			$this->response .= $num_rows. " user\n";
-
-			$query="SELECT * FROM alert ";
-			$result = mysql_query($query, $this->conn_id);
-			$num_rows = mysql_num_rows($result);
-			$this->response .=  $num_rows. " alert totali\n";
-
-			$query="SELECT * FROM alert WHERE enable=1";
-			$result = mysql_query($query, $this->conn_id);
-			$num_rows = mysql_num_rows($result);
-			$this->response .= $num_rows. " alert abilitati\n";
-
-			$query="SELECT * FROM alert GROUP BY chatid";
-			$result = mysql_query($query, $this->conn_id);
-			$num_rows = mysql_num_rows($result);
-			$this->response .=  $num_rows. " utenti con alert\n";
-
-
-
-		}
-		else {
-			$this->response .=  "unknow command!";
-
-		}
-
-	}
 
 }
 ?>
